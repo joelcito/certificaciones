@@ -1,0 +1,29 @@
+{
+  "name": "segip-certification-front",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host --port=3000",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@intlify/unplugin-vue-i18n": "^4.0.0",
+    "@vuepic/vue-datepicker": "^8.5.1",
+    "axios": "^1.6.8",
+    "sweetalert2": "^11.10.8",
+    "vue": "^3.4.21",
+    "vue-i18n": "^9.13.1",
+    "vue-router": "^4.3.2",
+    "vue3-treeview": "^0.4.2",
+    "vuetify": "^3.6.3"
+  },
+  "devDependencies": {
+    "@mdi/font": "^7.4.47",
+    "@vitejs/plugin-vue": "^5.0.4",
+    "@vue-leaflet/vue-leaflet": "^0.10.1",
+    "leaflet": "^1.9.4",
+    "vite": "^5.2.0"
+  }
+}
