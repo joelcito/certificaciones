@@ -1,0 +1,12 @@
+[
+    {
+        "id":1,
+        "option":"Certificaciones",
+        "link":"/certification"
+    },
+    {
+        "id":2,
+        "option":"Validaciones",
+        "link":"/validation"
+    }
+]
