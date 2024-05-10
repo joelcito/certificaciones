@@ -316,14 +316,14 @@
 <!-- krlos end -->
   <FooterMain />
 </template>
-<script setup lang="ts">
+<script setup >
 import * as rubic from '../assets/rubic.js'
 import Main from './principal/Main.vue'
 import menus from '../data/mainMenu.json'
 import HeaderMain from './principal/HeaderMain.vue'
 import FooterMain from './principal/FooterMain.vue'
 import {RouterLink} from 'vue-router'
-
+import { createVuetify } from 'vuetify'
 import { ref } from 'vue';
 
 
