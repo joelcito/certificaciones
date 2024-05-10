@@ -3,7 +3,7 @@
         "id":1,
         "menuName":1,
         "icon":"mdi-account",
-        "color":"orange",
+        "color":"blue",
         "image":"text",
         "title":"Politica de privacidad",
         "subtitle":"krlos",
@@ -12,7 +12,7 @@
     {
         "id":2,
         "menuName":2,
-        "icon":"mdi-account",
+        "icon":"mdi-domain",
         "color":"blue",
         "image":"text",
         "title":"Datos personales",
@@ -22,7 +22,7 @@
     {
         "id":3,
         "menuName":3,
-        "icon":"mdi-account",
+        "icon":"mdi-message-text",
         "color":"blue",
         "image":"text",
         "title":"Verficacion de datos",
@@ -32,7 +32,7 @@
     {
         "id":4,
         "menuName":4,
-        "icon":"mdi-account",
+        "icon":"mdi-dialpad",
         "color":"blue",
         "image":"text",
         "title":"Tipos de certificacion",
@@ -42,7 +42,7 @@
     {
         "id":5,
         "menuName":5,
-        "icon":"mdi-account",
+        "icon":"mdi-email",
         "color":"blue",
         "image":"text",
         "title":"Metodo de pago y certificacion",
