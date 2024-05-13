@@ -5,19 +5,15 @@
   <template>
     <HeaderMain />
     <v-app>
-        <v-app-bar app color="#035373" dark>
-      
-      <v-toolbar-title class="text-center text-capitalize">Sistema de certificaciones en linea Certificación de cédula de identidad </v-toolbar-title>
-      </br>
-    </v-app-bar>
+      <v-app-bar app color="#035373" dark>
+        </br>
+      </v-app-bar>
       <div>.</div>         <div>.</div>       <div>.</div>        
       <v-container>
         <v-stepper 
          class="custom" 
          alt-labels
-      
-  
-          :items="['Politicas de Privacida', 'Datos Personales', 'Verificacion de datos', 'Tipos de certificación', 'Método de pago de certificación']"
+          :items="timeLineMenu"
         >
           <template v-slot:item.1>
             <v-card title="Politicas de Privacidad " color="#F8983D" flat>
@@ -65,94 +61,7 @@
       </v-container>
 
 
-      <Stepper v-model:activeStep="active">
-    <StepperPanel>
-        <template #header="{ index, clickCallback }">
-            <button class="bg-transparent border-none inline-flex flex-column gap-2" @click="clickCallback">
-                <span :class="['border-round border-2 w-3rem h-3rem inline-flex align-items-center justify-content-center', { 'bg-primary border-primary': index <= active, 'surface-border': index > active }]">
-                    <i class="pi pi-user" />
-                </span>
-            </button>
-        </template>
-        <template #content="{ nextCallback }">
-            <div class="flex flex-column gap-2 mx-auto" style="min-height: 16rem; max-width: 20rem">
-                <div class="text-center mt-3 mb-3 text-xl font-semibold">Create your account</div>
-                <div class="field p-fluid">
-                    <IconField>
-                        <InputIcon>
-                            <i class="pi pi-user" />
-                        </InputIcon>
-                        <InputText id="input" v-model="name" type="text" placeholder="Name" />
-                    </IconField>
-                </div>
-                <div class="field p-fluid">
-                    <IconField>
-                        <InputIcon>
-                            <i class="pi pi-envelope" />
-                        </InputIcon>
-                        <InputText id="email" v-model="email" type="email" placeholder="Email" />
-                    </IconField>
-                </div>
-                <div class="field p-fluid">
-                    <Password v-model="password" toggleMask placeholder="Password" />
-                </div>
-            </div>
-            <div class="flex pt-4 justify-content-end">
-                <Button label="Next" icon="pi pi-arrow-right" iconPos="right" @click="nextCallback" />
-            </div>
-        </template>
-    </StepperPanel>
-    <StepperPanel>
-        <template #header="{ index, clickCallback }">
-            <button class="bg-transparent border-none inline-flex flex-column gap-2" @click="clickCallback">
-                <span :class="['border-round border-2 w-3rem h-3rem inline-flex align-items-center justify-content-center', { 'bg-primary border-primary': index <= active, 'surface-border': index > active }]">
-                    <i class="pi pi-star" />
-                </span>
-            </button>
-        </template>
-        <template #content="{ prevCallback, nextCallback }">
-            <div class="flex flex-column gap-2 mx-auto" style="min-height: 16rem; max-width: 24rem">
-                <div class="text-center mt-3 mb-3 text-xl font-semibold">Choose your interests</div>
-                <div class="flex flex-wrap justify-content-center gap-3">
-                    <ToggleButton v-model="option1" onLabel="Nature" offLabel="Nature" />
-                    <ToggleButton v-model="option2" onLabel="Art" offLabel="Art" />
-                    <ToggleButton v-model="option3" onLabel="Music" offLabel="Music" />
-                    <ToggleButton v-model="option4" onLabel="Design" offLabel="Design" />
-                    <ToggleButton v-model="option5" onLabel="Photography" offLabel="Photography" />
-                    <ToggleButton v-model="option6" onLabel="Movies" offLabel="Movies" />
-                    <ToggleButton v-model="option7" onLabel="Sports" offLabel="Sports" />
-                    <ToggleButton v-model="option8" onLabel="Gaming" offLabel="Gaming" />
-                    <ToggleButton v-model="option9" onLabel="Traveling" offLabel="Traveling" />
-                    <ToggleButton v-model="option10" onLabel="Dancing" offLabel="Dancing" />
-                </div>
-            </div>
-            <div class="flex pt-4 justify-content-between">
-                <Button label="Back" severity="secondary" icon="pi pi-arrow-left" @click="prevCallback" />
-                <Button label="Next" icon="pi pi-arrow-right" iconPos="right" @click="nextCallback" />
-            </div>
-        </template>
-    </StepperPanel>
-    <StepperPanel>
-        <template #header="{ index, clickCallback }">
-            <button class="bg-transparent border-none inline-flex flex-column gap-2" @click="clickCallback">
-                <span :class="['border-round border-2 w-3rem h-3rem inline-flex align-items-center justify-content-center', { 'bg-primary border-primary': index <= active, 'surface-border': index > active }]">
-                    <i class="pi pi-id-card" />
-                </span>
-            </button>
-        </template>
-        <template #content="{ prevCallback }">
-            <div class="flex flex-column gap-2 mx-auto" style="min-height: 16rem; max-width: 24rem">
-                <div class="text-center mt-3 mb-3 text-xl font-semibold">Account created successfully</div>
-                <div class="text-center">
-                    <img alt="logo" src="https://primefaces.org/cdn/primevue/images/stepper/content.svg" />
-                </div>
-            </div>
-            <div class="flex pt-4 justify-content-start">
-                <Button label="Back" severity="secondary" icon="pi pi-arrow-left" @click="prevCallback" />
-            </div>
-        </template>
-    </StepperPanel>
-</Stepper>
+
 
 
     <v-footer app padless color="#035373" dark>
@@ -168,7 +77,7 @@
       ></v-btn>
    
 
-        Servicio general de identificación Personal © {{ currentYear }} | v1.0.0
+        Servicio general de identificación Personal © 2024 | v1.0.0
       </v-col>
       
     </v-footer>
@@ -177,7 +86,7 @@
   </template>
   
      
-    <script>
+    <script setup>
     import Stepper from 'primevue/stepper';
     import StepperPanel from 'primevue/stepperpanel';
     import HeaderMain from './principal/HeaderMain.vue'
@@ -187,12 +96,10 @@
     import { createVuetify } from 'vuetify'
     import {RouterLink} from 'vue-router'
 
-    import { ref } from 'vue';
-  
-   export default {
-      data: () => ({
-        tab: 'tab-1',
-        tabs: [
+    import { ref, reactive } from 'vue';
+
+    const tab = ref('tab-1')
+    const tabs = reactive([
           {
             icon: 'mdi-book-open-page-variant',
             text: 'ACEPTACIÓN DE LOS TERMINOS',
@@ -211,16 +118,14 @@
             value: 'tab-3',
             content: "Detalles sobre la declaración y su importancia.Sed aliquam ultrices mauris. Donec posuere vulputate arcu. Morbi ac felis. Etiam feugiat lorem non metus. Sed a libero."
           },
-       
-        ],
-            icons: [
+        ]
+        )
+    const icons = reactive( [
         'mdi-facebook',
         'mdi-twitter',
         'mdi-linkedin',
         'mdi-instagram',
-      ],
-      }),
-    }
+      ])
     
     </script>
     

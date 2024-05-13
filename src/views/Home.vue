@@ -302,7 +302,7 @@
   <FooterMain />
 </template>
 <script setup >
-import * as rubic from '../assets/rubic.js'
+
 import Main from './principal/Main.vue'
 import menus from '../data/mainMenu.json'
 import HeaderMain from './principal/HeaderMain.vue'
