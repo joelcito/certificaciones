@@ -64,16 +64,14 @@
                           <v-form v-model="isFormValid">
                               <v-card-text>
                                 <!-- <v-checkbox v-model="swpoliticas" :rules="politicasRules"  label="Aceptar politicas?"></v-checkbox> -->
-
                                 <v-checkbox
                                   :true-value="1"
                                   :false-value="0"
                                   :rules=politicasRules
                                   v-model="swpoliticas"
+                                  label="Aceptar politicas?"
                                   />                                
                               </v-card-text>
-
-
                           </v-form>  
 
 

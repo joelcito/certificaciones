@@ -7,7 +7,7 @@
             md="4"
           >
             <v-text-field
-              v-model="firstname"
+              v-model="carnet"
               :counter="10"
               :rules="nameRules"
               label="Cedula de identidad"
@@ -21,7 +21,7 @@
             md="4"
           >
             <v-text-field
-              v-model="lastname"
+              v-model="complemento"
               :counter="10"
               :rules="nameRules"
               label="complemento"
@@ -35,7 +35,7 @@
             md="4"
           >
             <v-text-field
-              v-model="email"
+              v-model="fnacimiento"
               :rules="emailRules"
               label="Fecha de nacimiento"
               hide-details
@@ -67,7 +67,7 @@
             md="6"
           >
             <v-text-field
-              v-model="firstname"
+              v-model="lastname"
               :counter="10"
               :rules="nameRules"
               label="Primer Apellido"
@@ -81,7 +81,7 @@
             md="6"
           >
             <v-text-field
-              v-model="lastname"
+              v-model="secondname"
               :counter="10"
               :rules="nameRules"
               label="Segundo Apellido"
@@ -92,7 +92,14 @@
   
         </v-row>
 
+
         
+        <!-- <v-card-text>
+          <v-text-field  v-model="email" :rules="emailRules" :counter="50"
+              label="Email" minlength="5"  maxlength="50"  required
+          ></v-text-field>
+        </v-card-text> -->
+
 
       </v-container>
     </v-form>
@@ -101,8 +108,12 @@
     export default {
       data: () => ({
         valid: false,
+        carnet:'',
+        complemento:'',
+        fnacimiento:'',
         firstname: '',
         lastname: '',
+        secondname:'',
         nameRules: [
           value => {
             if (value) return true
