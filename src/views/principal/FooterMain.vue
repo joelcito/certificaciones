@@ -2,7 +2,8 @@
   <!-- krlos start -->
 
       <footer class="footer py-4 bg-dark text-light"> 
-          <div class="container text-center">
+            <!-- <div class="container text-center"> -->
+            <v-col class="text-center text-capitalize" cols="12">
               <!-- <p class="mb-4 small">Copyright <script>document.write(new Date().getFullYear())</script> &copy; <a href="http://www.devcrud.com">DevCRUD</a></p> -->
               <v-btn
                     v-for="icon in icons"
@@ -11,10 +12,8 @@
                     class="sx-1"
                     variant="text"
                 ></v-btn>
-            
-
-        Servicio general de identificación Personal © 2024 | v1.0.0
-          </div>
+                Servicio general de identificación Personal © 2024 | v1.0.0
+            </v-col>
       </footer>
   
   <!-- krlos end -->

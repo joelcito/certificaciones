@@ -386,6 +386,7 @@ h3, .h3 {
 
 h4, .h4 {
   font-size: 1.5rem;
+  color: #025B80;
 }
 
 h5, .h5 {
@@ -8797,7 +8798,7 @@ button.bg-dark:focus {
 }
 
 .h-100 {
-  height: 100% !important;
+  height: 73% !important;
 }
 
 .h-auto {
@@ -10775,7 +10776,7 @@ button.bg-dark:focus {
 }
 
 .text-primary {
-  color: #F58C31 !important;
+  color: #006AA6 !important;
 }
 
 a.text-primary:hover, a.text-primary:focus {
@@ -11343,6 +11344,10 @@ textarea {
   background-color: rgba(52, 58, 64, 0.2);
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
+
+  background-image: url('navbarimg.png');
+  background-repeat: repeat-x;
+  
 }
 
 .page-navbar .navbar-brand {
@@ -11402,19 +11407,36 @@ textarea {
 }
 
 .header {
-  background: #025B80;
-  background: #006AA6;
-  background-size: cover;
-  background-position: center center;
+  background-image: url('fondo.jpg');
+  background-repeat: no-repeat;
   background-attachment: fixed;
-  color: white;
+  background-size: 100% 100%;
+  /*background-size: cover;*/
+  
+  color: #025B80;
   position: relative;
-  min-height: 600px;
+  min-height: 900px;
+  height: 80%;
+  padding: 83px;
+}
+
+.headercerti {
+  background-image: url('fondo.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100% 100%;
+  /*background-size: cover;*/
+  
+  
+  position: relative;
+  min-height: 900px;
   height: 100%;
+  padding: 33px;
+  margin-top: 7%;
 }
 
 .header .header-title {
-  font-size: 45px;
+  font-size: 60px;
   font-weight: 300;
 }
 
@@ -11423,8 +11445,9 @@ textarea {
 }
 
 .header .header-subtitle {
-  font-size: 30px !important;
+  font-size: 25px !important;
   font-weight: 100;
+  text-align: center;
 }
 
 .header .header-subtitle:after {
@@ -11470,6 +11493,8 @@ textarea {
   font-weight: bold;
   opacity: .8;
   color: #212529;
+  text-align: center;
+  padding: 50;
 }
 
 .header-mini {

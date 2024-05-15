@@ -2,11 +2,13 @@
     {
         "id":1,
         "option":"Certificaciones",
-        "link":"/certification"
+        "link":"/certification",
+        "imgoption":"src/assets/cimain2.png"
     },
     {
         "id":2,
         "option":"Validaciones",
-        "link":"/validation"
+        "link":"/validation",
+        "imgoption":"src/assets/good.png"
     }
 ]

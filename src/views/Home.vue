@@ -7,31 +7,46 @@
   <div>
 
     <v-card>
+      
       <header class="header d-flex justify-content-center">
-        <div class="container">
-            <div class="row h-100 align-items-center">
-                <div class="col-md-12">
-                    <div class="header-content">
-                        <h3 class="header-title"><strong class="text-primary">CERTIFICACION EN LINEA</strong><span></span></h3>
-                        <h4 class="header-subtitle">Rapido, seguro y confiable. </h4>
-                        <p>Certificaciones de cedulas de identidad(A,B,C) y de licencias de conducir.</p>
-                        
-                      
-                        <div class="menus">
-                          <RouterLink  v-for="menu in menus"  :to="menu.link" :key="menu.id" href="" class="btn btn-outline-light btn-flat">
-                           <h4>{{menu.option}}</h4>
-                          </RouterLink>
-                        </div>                        
-                    </div>  
-                </div>
-                <!-- <div class="col-md-6 d-none d-md-block">
-                    krlos
-                </div> -->
-            </div>  
-        </div>
+        <v-container class="">
+          <v-row class=" align-items-center">
+            <v-col cols="12" lg="6" md="6" sm="12">
+              <h3 class="header-title">
+                <strong class="text-primary">
+                    Sistema de certificaciones en Linea
+                </strong>
+              </h3>
+            </v-col>
+            <v-col cols="12" lg="6" md="6" sm="12">
+              <img :src="imageSegip">
+            </v-col>
+          </v-row>
+          <v-row>
+            <v-col cols="12" md="12" sm="12">
+              <h5 class="header-subtitle">Rapido, seguro y confiable - Certificaciones en linea </h5>
+            </v-col>
+          </v-row>
+          <v-card class="vcardoption">
+            <v-row >
+              <v-col cols="12" lg="6" md="6" sm="12" v-for="menu in menus" >
+                <RouterLink    :to="menu.link" :key="menu.id" href="" >
+                      <img :src="(menu.imgoption)">
+                        <v-btn class="mainbuton" >
+                            <span class = "text-white">
+                              {{menu.option}}
+                            </span>
+                        </v-btn>
+                    </RouterLink>
+              </v-col>
+            </v-row>          
+          </v-card>
+        </v-container>
+
       </header>
     </v-card>
   
+    
     <div class="social-wrapper" id="features">
         <div class="container">
             <div class="social-txt">
@@ -311,8 +326,8 @@ import {RouterLink} from 'vue-router'
 import { createVuetify } from 'vuetify'
 import { ref } from 'vue';
 
-
-
+import imageSegip from "../assets/compu.png"
+import ciMain from "../assets/cimain.png"
 
 const Regform = ref();
 
@@ -324,6 +339,37 @@ function validate() {
 </script>
 
 <style lang="css">
+
+.mainbuton {
+    border-radius: 8px !important;
+    border-color: #F58C31 !important;
+    color: #F58C31  !important;
+    background-color: #F58C31 !important;
+    text-decoration: none !important;
+    max-width: auto;
+    font-size-adjust: auto;
+    margin: 1px;
+    width: 50%;
+    height: 20%;
+    
+    &:hover {
+        background-color: #006AA6 !important;
+        color: #006AA6 !important;
+        text-decoration-color: #006AA6 !important;
+        border-color: #006AA6 !important;
+        margin: 1px;
+        span {
+            color: white !important;
+        }
+    }
+}
+
+
+.vcardoption{
+  border-radius: 30px;
+  text-align: center;
+}
+
 .menus {  
     
     width: 100%;
@@ -340,7 +386,7 @@ function validate() {
 
 .menus a {
   text-decoration:none;
-  color: black;
+  color: #025B80;
   width: 50%;
   box-shadow: 1px 1px 1px rgba(0,0,0,0.388);
   margin: 10px;
