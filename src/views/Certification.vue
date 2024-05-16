@@ -69,7 +69,10 @@
                                   :false-value="0"
                                   :rules=politicasRules
                                   v-model="swpoliticas"
-                                  label="Aceptar politicas?"
+                                  label="He leído y acepto los términos legales y condiciones de uso del servicio."
+
+                            
+                          
                                   />                                
                               </v-card-text>
                           </v-form>  
@@ -84,17 +87,122 @@
                   
                   
                   <template v-slot:item.2>            
-                    <v-card title="step 2 " color="#F8983D" flat class="rounded-card">
+                    <v-card title="Datos Personales " color="#F8983D" flat class="rounded-card">
                       <v-sheet color="#fff" elevation="3" rounded="lg">
                         <div >
-                          <formInfoPerson />    
-                          <v-form v-model="isFormValid">
+                          <!-- <formInfoPerson />     -->
+                          <!-- <v-form v-model="isFormValid">
                             <v-card-text>
                               <v-text-field  v-model="email" :rules="emailRules" :counter="50"
                                   label="Email" minlength="5"  maxlength="50"  required
                               ></v-text-field>
                             </v-card-text>
-                          </v-form>                                              
+                          </v-form> -->
+                          <v-form v-model="isFormValid">
+                            <v-container>
+                              <v-row>
+                                <v-col
+                                  cols="12"
+                                  md="5"
+                                >
+                                  <v-text-field
+                                    v-model="carnet"
+                                    :counter="10"
+                                    :rules="nameRules"
+                                    label="Cedula de identidad"
+                                    hide-details
+                                    required
+                                  ></v-text-field>
+                                </v-col>
+                        
+                                <v-col
+                                  cols="12"
+                                  md="2"
+                                >
+                                  <v-text-field
+                                    v-model="complemento"
+                                    :counter="10"
+                                    :rules="nameRules"
+                                    label="complemento"
+                                    hide-details
+                                    required
+                                  ></v-text-field>
+                                </v-col>
+                        
+                                <v-col
+                                  cols="12"
+                                  md="5"
+                                >
+                                  <v-text-field
+                                    v-model="fnacimiento"
+                                    :rules="nameRules"
+                                    label="Fecha de nacimiento"
+                                    hide-details
+                                    required
+                                  ></v-text-field>
+                                </v-col>
+                              </v-row>
+                              <v-row>
+                                <v-col
+                                  cols="12"
+                                  md="12"
+                                >
+                                  <v-text-field
+                                    v-model="firstname"
+                                    :counter="10"
+                                    :rules="nameRules"
+                                    label="Nombre(s)"
+                                    hide-details
+                                    required
+                                  ></v-text-field>
+                                </v-col>
+                        
+                              
+                              </v-row>
+
+                              <v-row>
+                                <v-col
+                                  cols="12"
+                                  md="6"
+                                >
+                                  <v-text-field
+                                    v-model="lastname"
+                                    :counter="10"
+                                    :rules="nameRules"
+                                    label="Primer Apellido"
+                                    hide-details
+                                    required
+                                  ></v-text-field>
+                                </v-col>
+                        
+                                <v-col
+                                  cols="12"
+                                  md="6"
+                                >
+                                  <v-text-field
+                                    v-model="secondname"
+                                    :counter="10"
+                                    :rules="nameRules"
+                                    label="Segundo Apellido"
+                                    hide-details
+                                    required
+                                  ></v-text-field>
+                                </v-col>
+                        
+                              </v-row>
+
+
+                              
+                              <!-- <v-card-text>
+                                <v-text-field  v-model="email" :rules="emailRules" :counter="50"
+                                    label="Email" minlength="5"  maxlength="50"  required
+                                ></v-text-field>
+                              </v-card-text> -->
+
+
+                            </v-container>
+                          </v-form>
+                          
                         </div>
                       </v-sheet>
                     </v-card>
@@ -150,18 +258,20 @@ import ciMain from "../assets/cimain.png"
 import formInfoPerson from './formInfoPerson.vue'
 import DataVerification from './DataVerification.vue'
 
-
-
-
 const step = ref(1)
 let isFormValid = ref(false)
-
-
 let swpoliticas = ref(false)
-const politicasRules = reactive([v => !!v || 'You must agree to continue!'])
-
-
 const email= ref("")
+const carnet= ref("")
+const complemento= ref("")
+const fnacimiento= ref("")
+const firstname= ref("")
+const lastname= ref("")
+const secondname= ref("")
+
+
+
+const politicasRules = reactive([v => !!v || 'El campo es requerido para continuar!'])
 const emailRules = reactive( [
     v => !!v || "Email is required",
     (v) =>
@@ -173,12 +283,22 @@ const emailRules = reactive( [
     v => /.+@.+/.test(v) || "Please enter a valid email address"]
     )
 
-
-
+const nameRules = reactive([
+          value => {
+            if (value) return true
+  
+            return 'Name is required.'
+          },
+          value => {
+            if (value?.length <= 10) return true
+  
+            return 'Name must be less than 10 characters.'
+          }
+        ]
+        )
 
 const tab = ref('tab-1')
 const tabs = reactive([
-
 
       {
         icon: 'mdi-book-open-page-variant',
@@ -263,7 +383,7 @@ function nextstep(opt, num){
   if(opt == 'con'){
     step.value = step.value + 1
   }
-  
+
 }
 
 /*function valPoliticas(){

@@ -10777,6 +10777,8 @@ button.bg-dark:focus {
 
 .text-primary {
   color: #006AA6 !important;
+  /* font: oblique bold 200% cursiva;
+  font-size: 56pt; */
 }
 
 a.text-primary:hover, a.text-primary:focus {

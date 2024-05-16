@@ -14,7 +14,7 @@
             <v-col cols="12" lg="6" md="6" sm="12">
               <h3 class="header-title">
                 <strong class="text-primary">
-                    Sistema de certificaciones en Linea
+                    Sistema de certificacion en Linea
                 </strong>
               </h3>
             </v-col>
@@ -24,7 +24,7 @@
           </v-row>
           <v-row>
             <v-col cols="12" md="12" sm="12">
-              <h5 class="header-subtitle">Rapido, seguro y confiable - Certificaciones en linea </h5>
+              <h5 class="header-subtitle">Rapido, seguro y confiable </h5>
             </v-col>
           </v-row>
           <v-card class="vcardoption">
